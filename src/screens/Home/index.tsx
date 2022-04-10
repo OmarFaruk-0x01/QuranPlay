@@ -19,7 +19,7 @@ const HomeScreen: React.FC = () => {
   const onPageScrollStateChange = ({nativeEvent}) => {
     setScreenState(nativeEvent.pageScrollState);
   };
-  console.log(onScreenIndex, onScreenState);
+  // console.log(onScreenIndex, onScreenState);
 
   return (
     <View style={{flex: 1}}>

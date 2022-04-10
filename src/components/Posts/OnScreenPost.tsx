@@ -47,7 +47,7 @@ const OnScreenPost: React.FC<OnScreenPostProps> = ({
         style={OnScreenPostStyle.video}
         resizeMode={'contain'}
         onError={e => {
-          console.log(JSON.stringify(e, undefined, 2));
+          // console.log(JSON.stringify(e, undefined, 2));
         }}
         source={{
           uri: video.url,

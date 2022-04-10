@@ -26,10 +26,10 @@ const UploadScreen = () => {
 
   const onFilePickerClick = () => {
     FilePickerManager.showFilePicker(response => {
-      console.log('Response = ', response);
+      // console.log('Response = ', response);
 
       if (response.didCancel) {
-        console.log('User cancelled file picker');
+        // console.log('User cancelled file picker');
       } else if (response.error) {
         console.log('FilePickerManager Error: ', response.error);
       } else {
@@ -83,7 +83,7 @@ const UploadScreen = () => {
     LoadLocalVideos();
   }, []);
   const onRefresh = useCallback(() => {
-    console.log('refer');
+    // console.log('refer');
     LoadLocalVideos();
   }, []);
 
@@ -91,7 +91,7 @@ const UploadScreen = () => {
     setEndCount(endCount + 5);
   }, [endCount]);
 
-  console.log('Upload Screen');
+  // console.log('Upload Screen');
 
   return (
     <View style={{flex: 1, backgroundColor: '#ffffff'}}>

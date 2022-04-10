@@ -10,12 +10,12 @@ export const LoadLocalVideos = () => {
     RNThumbnail.cleanDir();
     ScanDirs(ExternalStorageDirectoryPath)
       .then(allLocalVideos => {
-        console.log(allLocalVideos);
+        // console.log(allLocalVideos);
 
         return dispatch({type: LOADLOCALVIDEO, payload: allLocalVideos});
       })
       .catch(e => {
-        console.log(e);
+        // console.log(e);
         return dispatch({type: ER_LOADLOCALVIDEO, payload: e});
       });
   };

@@ -39,22 +39,21 @@ export async function scanDir(
       if (
         !DefaultVideoDirs.find(folderName =>
           fileObj.name.toLowerCase().includes(folderName),
-          )
-          ) {
-            const directoryPath = pathOfDirToScan + '/' + fileObj.name;
-            await scanDir(directoryPath, file);
-          }
-        } else {
-          const ext = fileObj.name.split('.').pop();
-          if (Extantions.includes(ext?.toLowerCase() as string)) {
-            const thumbResult = await RNThumbnail.get(fileObj.path);
-        console.log(await RNThumbnail.get(fileObj.path));
-        
+        )
+      ) {
+        const directoryPath = pathOfDirToScan + '/' + fileObj.name;
+        await scanDir(directoryPath, file);
+      }
+    } else {
+      const ext = fileObj.name.split('.').pop();
+      if (Extantions.includes(ext?.toLowerCase() as string)) {
+        const thumbResult = await RNThumbnail.get(fileObj.path);
+        // console.log(await RNThumbnail.get(fileObj.path));
+
         if (
           parseInt(thumbResult.duration) < 78000 &&
           parseInt(thumbResult.duration) > 10000
         ) {
-          
           file.push({
             mtime: fileObj.mtime,
             path: fileObj.path,
